@@ -1,6 +1,6 @@
 <h1>Contact us</h1>
 
-<%= form_for :contact, url: contacts_path do |f| %>
+<%= form_for @contact, url: contacts_path do |f| %>
   <p>
     <%= f.label :email %><br />
     <%= f.text_field :email %>
