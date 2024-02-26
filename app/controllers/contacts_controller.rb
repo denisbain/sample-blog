@@ -7,11 +7,7 @@ class ContactsController < ApplicationController
   end
   def create
     @contact = Contact.new(contact_params)
-    if @contact.save
-      redirect_to contacts_url
-    else
-      render :new
-    end
+    @contact.save
   end
 
 
@@ -21,3 +17,8 @@ class ContactsController < ApplicationController
     params.require(:contact).permit(:email, :message)
   end
 end
+#if @contact.save
+#  render :create
+#else
+# render :create
+#end
