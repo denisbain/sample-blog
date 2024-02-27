@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get 'home/index'
 
   resources :contacts, only: [:new, :create], path_names: {:new => ''}
+  resources :terms
+  resources :about
   resources :articles
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
