@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
 
   resources :contacts, only: [:new, :create], path_names: {:new => ''}
-  resources :articles
+  resources :articles do
+    resources :comments
+  end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
