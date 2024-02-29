@@ -20,3 +20,12 @@
 
 <% end %>
 </p>
+<p>
+  <% @article.comments.each do |comment| %>
+  <p>
+    <%= "Author: #{comment.author}" %><br />
+    <%= "Body: #{comment.body}" %>
+  </p>
+  <hr />
+<% end %>
+</p>
