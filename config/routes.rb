@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about'
   root to: "home#index"
 
-
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+  
   resources :contacts, only: [:new, :create], path_names: {:new => ''}
   resources :articles do
     resources :comments, only: :create
