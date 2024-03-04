@@ -5,10 +5,6 @@
 <h2>Add comment</h2>
 <p>
   <%= form_for([@article, @article.comments.build]) do |f| %>
-  <p>
-    <%= f.label :author%><br />
-    <%= f.text_field :author %>
-  </p>
 
   <p>
     <%= f.label :body %><br />
@@ -25,7 +21,7 @@
 <p>
   <% @article.comments.each do |comment| %>
   <p>
-    <i> <%= "Author: #{comment.author}" %><br /></i>
+    <i> <%= "Author: #{current_user.username}" %><br /></i>
     <i><%= "Body: #{comment.body}" %></i>
   </p>
   <hr />
