@@ -18,7 +18,6 @@
     <% else %>
       <%= link_to 'Sign in', new_user_session_path %>
     <% end %>
-  </div>
   <%# <a href="/users/sign_in">Sign in</a> |
   <a href="/users/sign_out" data-turbo-method="delete">Sign out</a>%>
 
@@ -26,5 +25,6 @@
   <p class="alert"><%= alert %></p>
 
   <%= yield %>
+  </div>
   </body>
 </html>
