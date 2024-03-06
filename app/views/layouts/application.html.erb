@@ -13,35 +13,34 @@
 
   <body>
   <div class="container">
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Blog</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Article</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">New</a>
-          </li>
-        </ul>
-
-          <% if user_signed_in? %>
-            <span class="navbar-text mr-4">
-            Hello, <%= current_user.username %> <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-            </span>
-          <% else %>
-            <span class="navbar-text">
-            <%= link_to 'Sign in', new_user_session_path %>
-            </span>
-          <% end %>
-        </form>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <%= link_to 'Blog', root_path, class: "navbar-brand"%>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <%= link_to 'Article', articles_path, class: "nav-link active", aria: { current: "page" } %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'New', new_article_path, class: "nav-link" %>
+            </li>
+          </ul>
+            <% if user_signed_in? %>
+              <span class="navbar-text mr-4">
+              Hello, <%= current_user.username %> <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+              </span>
+            <% else %>
+              <span class="navbar-text">
+              <%= link_to 'Sign in', new_user_session_path %>
+              </span>
+            <% end %>
+          </form>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
   <%# <a href="/users/sign_in">Sign in</a> |
   <a href="/users/sign_out" data-turbo-method="delete">Sign out</a>%>
 
