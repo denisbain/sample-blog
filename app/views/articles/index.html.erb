@@ -1,3 +1,4 @@
+
 <h1>List of articles</h1>
 <% @article.each do |article|%>
   <h2>
@@ -9,7 +10,7 @@
   <p>
     <%= link_to 'Show', article_path(article) %> |
     <%= link_to 'Edit',  edit_article_path(article) %>
-    <%= button_to 'Delete', article_path(article), method: :delete%>
+    <%= button_to 'Delete', article_path(article), method: :delete, class: "btn btn-danger" %>
   </p>
   <hr />
 <% end %>
