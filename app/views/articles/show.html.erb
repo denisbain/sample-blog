@@ -7,10 +7,15 @@
 <p>
   <%= form_for([@article, @article.comments.build]) do |f| %>
 
-  <p>
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
-  </p>
+    <p>
+      <%= f.label :author %><br />
+      <%= f.text_area :author %>
+    </p>
+
+    <p>
+      <%= f.label :body %><br />
+      <%= f.text_area :body %>
+    </p>
 
   <p>
     <%= f.submit 'Create comments'%>
@@ -22,7 +27,7 @@
 <p>
   <% @article.comments.each do |comment| %>
   <p>
-    <i> <%= "Author: #{current_user.username}" %><br /></i>
+    <i> <%= "Author: #{comment.author}" %><br /></i>
     <i><%= "Body: #{comment.body}" %></i>
   </p>
   <hr />
