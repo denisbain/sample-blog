@@ -7,13 +7,8 @@ class Article < ApplicationRecord
     title
   end
 
-  describe "#subject" do
-    it "returns the article title" do
-      # Создаем объект Article хитрым посоом
-      article = create(:article, title: 'Lorem Ipsum')
-
-      #assert, проверка
-      expect(article.subject).to eq 'Lorem Ipsum'
-    end
+  def last_comment
+    comments.last
   end
+
 end
