@@ -1,6 +1,6 @@
 <h1>Contact us</h1>
 
-<%= form_for(model: @contact, url: contacts_path, method: :post, data: {turbo: false} ) do |f| %>
+<%= form_for(@contact, url: contacts_path, method: :post, data: {turbo: false} ) do |f| %>
   <% if @contact && @contact.errors.any? %>
     <p>
     <ul>

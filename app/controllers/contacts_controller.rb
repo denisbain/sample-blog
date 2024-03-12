@@ -14,15 +14,9 @@ class ContactsController < ApplicationController
     end
   end
 
-
   private
 
   def contact_params
     params.require(:contact).permit(:email, :message)
   end
 end
-#if @contact.save
-#  render :create
-#else
-# render :create
-#end
