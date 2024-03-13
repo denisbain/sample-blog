@@ -1,9 +1,10 @@
 <div class="container">
+  <h1> <%= t('articles.create_article') %> <%= @article.id %></h1>
 <h1><%= @article.title %></h1>
 <p>
   <%= @article.text %>
 </p>
-<h2><%= t('articles.create_article') %></h2>
+<h2>Add comment</h2>
 <p>
   <%= form_for([@article, @article.comments.build]) do |f| %>
 
